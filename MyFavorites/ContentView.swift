@@ -13,8 +13,6 @@ struct ContentView: View {
     @State private var showPopUpTwo = false
     @State private var showPopUpThree = false
     @State private var showPopUpFour = false
-    @State private var showPopUpFive = false
-    @State private var showPopUpSix = false
     
     var body: some View {
 
@@ -82,14 +80,14 @@ struct ContentView: View {
                     Button(action: {
                         self.showPopUpThree = true
                     }, label: {
-                        FavoritesText(text: "Musician")
+                        FavoritesText(text: "Color")
                     })
                     if showPopUpThree {
                         ZStack {
                             Color("Light")
                             VStack {
-                                AnswerText(text: "Prince")
-                                ImageText(text: "👑")
+                                AnswerText(text: "Red")
+                                ImageText(text: "🎈")
                                 Spacer()
                                 Button(action: {
                                     self.showPopUpThree = false
@@ -110,14 +108,15 @@ struct ContentView: View {
                     Button(action: {
                         self.showPopUpFour = true
                     }, label: {
-                        FavoritesText(text: "Color")
+                        FavoritesText(text: "Book")
                     })
                     if showPopUpFour {
                         ZStack {
                             Color("Light")
                             VStack {
-                                AnswerText(text: "Red")
-                                ImageText(text: "🎈")
+                                AnswerText(text: "Two Against the Tide")
+                                    .fixedSize()
+                                ImageText(text: "📗")
                                 Spacer()
                                 Button(action: {
                                     self.showPopUpFour = false

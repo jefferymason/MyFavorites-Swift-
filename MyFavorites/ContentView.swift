@@ -20,7 +20,10 @@ struct ContentView: View {
             VStack {
                 VStack(spacing: 20) {
                     HeaderText(text: "My Favorites")
-
+//                        .padding(10)
+//                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: 1.0)
+                        
+                    
                     Button(action: {
                         self.showPopUpOne = true
                     }, label: {
@@ -141,7 +144,9 @@ struct ContentView: View {
             }
 
 
-            }
+        }
+        
+        
         }
     }
 

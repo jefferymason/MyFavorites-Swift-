@@ -38,6 +38,7 @@ struct AnswerText: View {
         Text(text)
             .font(.largeTitle)
             .fontWeight(.bold)
+            .foregroundColor(Color("Black"))
         Spacer()
         
     }

@@ -11,10 +11,14 @@ struct ContentView: View {
     
     @State private var showPopUpOne = false
     @State private var showPopUpTwo = false
+    @State private var showPopUpThree = false
+    @State private var showPopUpFour = false
+    @State private var showPopUpFive = false
+    @State private var showPopUpSix = false
     
     var body: some View {
 
-        VStack {
+        ZStack {
             VStack {
                 VStack(spacing: 20) {
                     HeaderText(text: "My Favorites")
@@ -24,11 +28,12 @@ struct ContentView: View {
                     }, label: {
                         FavoritesText(text: "Food")
                     })
-                    if $showPopUpOne.wrappedValue {
+                    if showPopUpOne {
                         ZStack {
-                            Color.yellow
+                            Color("Light")
                             VStack {
                                 AnswerText(text: "Pizza")
+                                ImageText(text: "🍕")
                                 Spacer()
                                 Button(action: {
                                     self.showPopUpOne = false
@@ -38,8 +43,12 @@ struct ContentView: View {
                                 })
                             }.padding()
                         }
-                        .frame(width: 300, height: 100)
-                        .cornerRadius(20).shadow(radius: 20)
+                        .frame(width: 300, height: 150)
+                        .cornerRadius(Constants.General.roundRectCornerRadius)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
+                              .strokeBorder(Color.white, lineWidth: Constants.General.strokeWidth)
+                          )
                     }
                     
                     Button(action: {
@@ -47,11 +56,12 @@ struct ContentView: View {
                     }, label: {
                         FavoritesText(text: "TV Show")
                     })
-                    if $showPopUpTwo.wrappedValue {
+                    if showPopUpTwo {
                         ZStack {
-                            Color.yellow
+                            Color("Light")
                             VStack {
                                 AnswerText(text: "Frasier")
+                                ImageText(text: "📺")
                                 Spacer()
                                 Button(action: {
                                     self.showPopUpTwo = false
@@ -61,11 +71,73 @@ struct ContentView: View {
                                 })
                             }.padding()
                         }
-                        .frame(width: 300, height: 100)
-                        .cornerRadius(20).shadow(radius: 20)
+                        .frame(width: 300, height: 150)
+                        .cornerRadius(Constants.General.roundRectCornerRadius)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
+                              .strokeBorder(Color.white, lineWidth: Constants.General.strokeWidth)
+                          )
                     }
+                    
+                    Button(action: {
+                        self.showPopUpThree = true
+                    }, label: {
+                        FavoritesText(text: "Musician")
+                    })
+                    if showPopUpThree {
+                        ZStack {
+                            Color("Light")
+                            VStack {
+                                AnswerText(text: "Prince")
+                                ImageText(text: "👑")
+                                Spacer()
+                                Button(action: {
+                                    self.showPopUpThree = false
+                                }, label: {
+                                    Text("Close")
+                                        .fontWeight(.bold)
+                                })
+                            }.padding()
+                        }
+                        .frame(width: 300, height: 150)
+                        .cornerRadius(Constants.General.roundRectCornerRadius)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
+                              .strokeBorder(Color.white, lineWidth: Constants.General.strokeWidth)
+                          )
+                    }
+                    
+                    Button(action: {
+                        self.showPopUpFour = true
+                    }, label: {
+                        FavoritesText(text: "Color")
+                    })
+                    if showPopUpFour {
+                        ZStack {
+                            Color("Light")
+                            VStack {
+                                AnswerText(text: "Red")
+                                ImageText(text: "🎈")
+                                Spacer()
+                                Button(action: {
+                                    self.showPopUpFour = false
+                                }, label: {
+                                    Text("Close")
+                                        .fontWeight(.bold)
+                                })
+                            }.padding()
+                        }
+                        .frame(width: 300, height: 150)
+                        .cornerRadius(Constants.General.roundRectCornerRadius)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
+                              .strokeBorder(Color.white, lineWidth: Constants.General.strokeWidth)
+                          )
+                    }
+                    
 
                 }
+                
 
             }
 
@@ -77,5 +149,8 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    ContentView()
+          .preferredColorScheme(.dark)
     }
 }
+

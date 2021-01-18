@@ -14,7 +14,7 @@ struct HeaderText: View {
         Text(text)
             .font(.largeTitle)
             .fontWeight(.black)
-            .foregroundColor(Color.red)
+            .foregroundColor(Color("PrimaryColor"))
         
     }
 }
@@ -26,7 +26,7 @@ struct FavoritesText: View {
         Text(text)
             .font(.largeTitle)
             .fontWeight(.thin)
-            .foregroundColor(Color.red)
+            .foregroundColor(Color("Dark"))
         
     }
 }
@@ -42,5 +42,18 @@ struct AnswerText: View {
         
     }
 }
+
+struct ImageText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .font(.largeTitle)
+        Spacer()
+        
+    }
+}
+
+
 
 

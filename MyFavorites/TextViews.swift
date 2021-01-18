@@ -38,7 +38,7 @@ struct AnswerText: View {
         Text(text)
             .font(.largeTitle)
             .fontWeight(.bold)
-            .foregroundColor(Color("Black"))
+            .foregroundColor(Color("Dark"))
         Spacer()
         
     }
